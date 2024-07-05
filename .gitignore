@@ -1,1 +1,5 @@
- 
+# Ignore extra files
+__pycache__/
+
+#ignore enviornment setup
+venv
