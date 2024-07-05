@@ -1,6 +1,7 @@
 import turtle
 from pointer import Pointer
 import pandas 
+from scoreboard import Scoreboard
 
 screen = turtle.Screen()
 screen.title("U.S. States Game")
@@ -8,6 +9,7 @@ image = "C:\\Users\\mdabr\\OneDrive\\Desktop\\udemy\\us game\\blank_states_img.g
 screen.addshape(image)
 turtle.shape(image)
 point= Pointer()
+score= Scoreboard()
 
 file= pandas.read_csv("C:\\Users\\mdabr\\OneDrive\\Desktop\\udemy\\us game\\50_states.csv")
 
@@ -29,6 +31,7 @@ while game_on:
             y_value = state_data['y']  # Access y value
             point.write_name(state, (x_value, y_value))  # Ensure (x, y) are passed as tuple
             all_states.remove(state)
+            score.increase_score()
             if len(all_states) == 0:
                 game_on = False
 
